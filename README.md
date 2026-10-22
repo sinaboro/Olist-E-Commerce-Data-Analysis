@@ -50,7 +50,7 @@ streamlit run app.py
 ```
 
 ### 분석 노트북
-1. Kaggle 「Brazilian E-Commerce Public Dataset by Olist」 의 CSV 9개를 내려받아 저장소 최상위의 `00_data/` 폴더에 넣습니다.
+1. Kaggle 「Brazilian E-Commerce Public Dataset by Olist」 의 CSV 9개를 내려받아 저장소 최상위의 `data/` 폴더에 넣습니다.
 2. `pip install pandas plotly jupyter` 후 `notebooks/` 의 노트북을 01 → 02 → 03 순서로 실행합니다.
    (03 노트북은 `notebooks/olist_dashboard/` 에 대시보드 파일을 만듭니다. 저장소 최상위의 `app.py` · `data/` 가 그 결과물입니다.)
 
