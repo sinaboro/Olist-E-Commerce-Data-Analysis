@@ -3,7 +3,8 @@
 브라질 온라인 마켓플레이스 **Olist** 의 실제 주문 데이터(약 10만 건)를 pandas · plotly 로 탐색적 데이터 분석(EDA)하고,
 분석 결과를 **Streamlit 대시보드**로 만들어 배포한 프로젝트입니다.
 
-- **대시보드 바로 가기**: (배포 후 주소 추가 예정)
+- **대시보드 바로 가기**: https://olist-ecommerce-sinaboro.streamlit.app
+  (Streamlit Community Cloud 무료 배포 — 한동안 접속이 없으면 잠들어 있다가, 접속 후 버튼을 누르면 1분 안에 다시 켜집니다)
 
 ## 구성
 
