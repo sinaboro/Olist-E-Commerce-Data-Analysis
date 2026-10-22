@@ -6,6 +6,9 @@
 - **대시보드 바로 가기**: https://olist-ecommerce-sinaboro.streamlit.app
   (Streamlit Community Cloud 무료 배포 — 한동안 접속이 없으면 잠들어 있다가, 접속 후 버튼을 누르면 1분 안에 다시 켜집니다)
 
+- **학습 교안 (PDF, 51쪽)**: [docs/Olist_이커머스_분석과_서비스배포_학습교안.pdf](docs/Olist_이커머스_분석과_서비스배포_학습교안.pdf)
+  — 노트북 3개 보충 설명, 주요 인사이트 10가지, GitHub · Streamlit Cloud 배포 따라 하기(실제 화면), 내 도메인으로 확장하는 방법
+
 ## 구성
 
 ```
@@ -15,6 +18,7 @@
 ├── data/                   ← 대시보드용 가공 데이터 (원본에서 필요한 열만 추려 압축, 약 2.4MB)
 │   ├── orders.csv.gz
 │   └── items.csv.gz
+├── docs/                   ← 학습 교안 PDF
 └── notebooks/              ← 분석 노트북 (실행 결과 포함)
     ├── 01_데이터이해_고객_매출.ipynb
     ├── 02_시간패턴_카테고리_배송리뷰.ipynb

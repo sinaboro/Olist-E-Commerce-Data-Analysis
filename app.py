@@ -144,10 +144,10 @@ with tab_state:
              "지연율 (%)": "late_rate", "평균 리뷰": "review"}
     pick = st.selectbox("비교할 지표", list(names))
     s = state.sort_values(names[pick], ascending=False)
-    fig = px.bar(s, x=s.index, y=names[pick], labels={"x": "주(state)", names[pick]: pick},
+    fig = px.bar(s, x=s.index, y=names[pick], labels={"customer_state": "주(state)", names[pick]: pick},
                  title=f"주(state)별 {pick}")
     st.plotly_chart(fig, width="stretch")
-    st.dataframe(state.rename(columns={v: k for k, v in names.items()}).round(2), width="stretch")
+    st.dataframe(state.rename(columns={v: k for k, v in names.items()}).rename_axis("주(state)").round(2), width="stretch")
 
 # (6) 원본 데이터 확인 · 내려받기
 with tab_data:
