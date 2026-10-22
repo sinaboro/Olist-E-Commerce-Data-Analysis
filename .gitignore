@@ -1,5 +1,6 @@
-# 원본 데이터 (Kaggle 에서 직접 내려받아 사용 — 용량이 커서 저장소에 올리지 않음)
-00_data/
+# Kaggle 원본 CSV (data/ 에 직접 넣어 사용 — 용량이 커서 저장소에 올리지 않음)
+# 대시보드용 가공 파일(data/*.csv.gz)은 이 규칙에 걸리지 않으므로 그대로 올라감
+data/*.csv
 
 # 03 노트북을 실행하면 notebooks/ 안에 생기는 대시보드 폴더 (같은 내용이 저장소 최상위에 있음)
 notebooks/olist_dashboard/

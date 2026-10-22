@@ -6,7 +6,7 @@
 - **대시보드 바로 가기**: https://olist-ecommerce-sinaboro.streamlit.app
   (Streamlit Community Cloud 무료 배포 — 한동안 접속이 없으면 잠들어 있다가, 접속 후 버튼을 누르면 1분 안에 다시 켜집니다)
 
-- **학습 교안 (PDF, 51쪽)**: [docs/Olist_이커머스_분석과_서비스배포_학습교안.pdf](docs/Olist_이커머스_분석과_서비스배포_학습교안.pdf)
+- **학습 교안 (PDF, 53쪽)**: [docs/Olist_이커머스_분석과_서비스배포_학습교안.pdf](docs/Olist_이커머스_분석과_서비스배포_학습교안.pdf)
   — 노트북 3개 보충 설명, 주요 인사이트 10가지, GitHub · Streamlit Cloud 배포 따라 하기(실제 화면), 내 도메인으로 확장하는 방법
 
 ## 구성
@@ -15,9 +15,10 @@
 ├── app.py                  ← Streamlit 대시보드 (배포되는 앱)
 ├── requirements.txt        ← 배포 서버가 설치할 패키지
 ├── .streamlit/config.toml  ← 대시보드 테마
-├── data/                   ← 대시보드용 가공 데이터 (원본에서 필요한 열만 추려 압축, 약 2.4MB)
-│   ├── orders.csv.gz
-│   └── items.csv.gz
+├── data/
+│   ├── orders.csv.gz       ← 대시보드용 가공 데이터 (필요한 열만 추려 압축, 약 2.4MB — 저장소에 포함)
+│   ├── items.csv.gz
+│   └── (Kaggle 원본 CSV 9개) ← 노트북 실습 때 직접 넣는 파일 (.gitignore 로 저장소에서 제외)
 ├── docs/                   ← 학습 교안 PDF
 └── notebooks/              ← 분석 노트북 (실행 결과 포함)
     ├── 01_데이터이해_고객_매출.ipynb
@@ -51,10 +52,11 @@ streamlit run app.py
 
 ### 분석 노트북
 1. Kaggle 「Brazilian E-Commerce Public Dataset by Olist」 의 CSV 9개를 내려받아 저장소 최상위의 `data/` 폴더에 넣습니다.
+   (노트북은 `PATH = "../data/"` 로 읽습니다. 원본 CSV 는 `.gitignore` 의 `data/*.csv` 규칙 때문에 `git add .` 를 해도 GitHub 에 올라가지 않습니다.)
 2. `pip install pandas plotly jupyter` 후 `notebooks/` 의 노트북을 01 → 02 → 03 순서로 실행합니다.
    (03 노트북은 `notebooks/olist_dashboard/` 에 대시보드 파일을 만듭니다. 저장소 최상위의 `app.py` · `data/` 가 그 결과물입니다.)
 
 ## 데이터 출처 · 라이선스
 
 Olist, *Brazilian E-Commerce Public Dataset by Olist* (Kaggle), **CC BY-NC-SA 4.0** (비영리 · 출처 표시 · 동일 조건 공유).
-`data/` 의 파일은 이 데이터에서 대시보드에 필요한 열만 가공 · 압축한 것입니다. 교육용 프로젝트입니다.
+저장소의 `data/*.csv.gz` 는 이 데이터에서 대시보드에 필요한 열만 가공 · 압축한 것이며, 원본 CSV 는 저장소에 포함하지 않습니다. 교육용 프로젝트입니다.
