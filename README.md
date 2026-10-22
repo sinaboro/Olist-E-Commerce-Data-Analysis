@@ -16,9 +16,10 @@
 ├── requirements.txt        ← 배포 서버가 설치할 패키지
 ├── .streamlit/config.toml  ← 대시보드 테마
 ├── data/
-│   ├── orders.csv.gz       ← 대시보드용 가공 데이터 (필요한 열만 추려 압축, 약 2.4MB — 저장소에 포함)
-│   ├── items.csv.gz
-│   └── (Kaggle 원본 CSV 9개) ← 노트북 실습 때 직접 넣는 파일 (.gitignore 로 저장소에서 제외)
+│   ├── olist_….csv.gz (8개) · product_category_name_translation.csv.gz
+│   │                       ← Kaggle 원본 9개를 압축한 것 (126MB → 44MB) — 노트북 실습용
+│   ├── orders.csv.gz       ← 대시보드용 가공 데이터 (필요한 열만 추려 압축, 약 2.4MB)
+│   └── items.csv.gz
 ├── docs/                   ← 학습 교안 PDF
 └── notebooks/              ← 분석 노트북 (실행 결과 포함)
     ├── 01_데이터이해_고객_매출.ipynb
@@ -51,12 +52,12 @@ streamlit run app.py
 ```
 
 ### 분석 노트북
-1. Kaggle 「Brazilian E-Commerce Public Dataset by Olist」 의 CSV 9개를 내려받아 저장소 최상위의 `data/` 폴더에 넣습니다.
-   (노트북은 `PATH = "../data/"` 로 읽습니다. 원본 CSV 는 `.gitignore` 의 `data/*.csv` 규칙 때문에 `git add .` 를 해도 GitHub 에 올라가지 않습니다.)
+1. 저장소를 받습니다 (`git clone` 또는 Code → Download ZIP). 원본 데이터는 `data/` 에 압축본(`.csv.gz`)으로 이미 들어 있어 따로 내려받을 필요가 없습니다.
+   (노트북은 `PATH = "../data/"` 에서 `.csv.gz` 를 그대로 읽습니다. 엑셀로 보고 싶으면 반디집 · 7-Zip 으로 압축을 푸세요. 압축을 푼 `.csv` 는 `.gitignore` 의 `data/*.csv` 규칙으로 저장소에 올라가지 않습니다.)
 2. `pip install pandas plotly jupyter` 후 `notebooks/` 의 노트북을 01 → 02 → 03 순서로 실행합니다.
    (03 노트북은 `notebooks/olist_dashboard/` 에 대시보드 파일을 만듭니다. 저장소 최상위의 `app.py` · `data/` 가 그 결과물입니다.)
 
 ## 데이터 출처 · 라이선스
 
 Olist, *Brazilian E-Commerce Public Dataset by Olist* (Kaggle), **CC BY-NC-SA 4.0** (비영리 · 출처 표시 · 동일 조건 공유).
-저장소의 `data/*.csv.gz` 는 이 데이터에서 대시보드에 필요한 열만 가공 · 압축한 것이며, 원본 CSV 는 저장소에 포함하지 않습니다. 교육용 프로젝트입니다.
+`data/` 의 `olist_….csv.gz` · `product_category_name_translation.csv.gz` 는 원본 CSV 를 내용 변경 없이 압축만 한 것이고, `orders.csv.gz` · `items.csv.gz` 는 대시보드에 필요한 열만 가공 · 압축한 것입니다. 교육용 프로젝트입니다.
